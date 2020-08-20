@@ -5,12 +5,22 @@ class HanoiGame {
 
   isValidMove(startTowerIdx, endTowerIdx) {
     // 0, 1 // 0, 2
-    if (startTowerIdx < endTowerIdx
-      && startTowerIdx !== endTowerIdx ) {
+    const topBlock = this.towers[startTowerIdx].length-1
+
+    if (this.towers[endTowerIdx].length === 0) {
       return true;
-    } else {
-      return false;
-    };
+    }
+
+    if (this.towers[startTowerIdx]) {
+
+    }
+
+    // if (startTowerIdx < endTowerIdx
+    //   && startTowerIdx !== endTowerIdx ) {
+    //   return true;
+    // } else {
+    //   return false;
+    // };
   };
 
   move(startTowerIdx, endTowerIdx) {}
