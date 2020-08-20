@@ -1,13 +1,23 @@
 class HanoiGame {
-  constructor() {}
+  constructor(towers=[[3, 2, 1], [], []]) { // 1 = TOP, 3 = BOTTOM (?)
+    this.towers = towers;
+  }
 
-  isValidMove(startTowerIdx, endTowerIdx) {}
+  isValidMove(startTowerIdx, endTowerIdx) {
+    // 0, 1 // 0, 2
+    if (startTowerIdx < endTowerIdx
+      && startTowerIdx !== endTowerIdx ) {
+      return true;
+    } else {
+      return false;
+    };
+  };
 
   move(startTowerIdx, endTowerIdx) {}
 
   isWon() {}
 
-  // the below methods are complete and do not need to be modified
+  // the below methods are complete and do not need to be modclearified
   print() {
     // will print our board nicely to our user
     console.log(JSON.stringify(this.towers));
