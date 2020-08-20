@@ -6,16 +6,21 @@ class HanoiGame {
 
   isValidMove(startTowerIdx, endTowerIdx) {
     // 0, 1 // 0, 2
-    const startPin = this.towers[startTowerIdx];
-    const destinationPin = this.towers[endTowerIdx];
+    const startTower = this.towers[startTowerIdx];
+    const targetTower = this.towers[endTowerIdx];
 
-    if (startPin.length === 0 || startPin === undefined || destinationPin === undefined) {
+    // check if startpin has any disks
+    if (startTower.length === 0 || startTower === undefined || targetTower === undefined) {
       return false;
-    } else if (destinationPin.length === 0) {
+    } else if (targetTower.length === 0) {
       return true;
+    }
+      // checking if the tower exists
+      else if (endTowerIdx >= this.towers.length || startTowerIdx < this.towers.length) {
+        return false;
     } else {
-      const lastDiskStart = startPin[startPin.length-1];
-      const lastDiskDestination = destinationPin[destinationPin.length-1];
+      const lastDiskStart = startTower[startTower.length-1];
+      const lastDiskDestination = targetTower[targetTower.length-1];
       return lastDiskStart < lastDiskDestination;
     }
   }
